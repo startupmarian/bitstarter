@@ -25,7 +25,7 @@ var gettext = require('gettext'),
 gettext.loadLanguageFile('./locale/es/messages.po', 'es');
 //gettext.loadLanguageFile('./locale/ru/messages.po', 'ru');
 
-gettext.loadLocaleDirectory('./locale/');
+//gettext.loadLocaleDirectory('./locale/');
 
 // Render homepage (note trailing slash): example.com/
 app.get('/', function(request, response) {
