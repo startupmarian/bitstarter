@@ -19,26 +19,27 @@ app.listen(port, function() {
 });
 */
 
-//var gettext = require('gettext'),
-//    _ = gettext.gettext;
+var gettext = require('gettext'),
+    _ = gettext.gettext;
 
-//gettext.loadLanguageFile('./locale/es/messages.po', 'es');
+gettext.loadLanguageFile('./locale/es/messages.po', 'es');
 //gettext.loadLanguageFile('./locale/ru/messages.po', 'ru');
 
-//gettext.loadLocaleDirectory('./locale/');
+gettext.loadLocaleDirectory('./locale/');
 
 // Render homepage (note trailing slash): example.com/
-/*app.get('/', function(request, response) {
+app.get('/', function(request, response) {
   var data = fs.readFileSync('index.html').toString();
   response.send(data);
 });
-*/
+
+
 // language/es
-/*app.get('/es', function(request, response) {
+app.get('/es', function(request, response) {
    gettext.setlocale('LC_ALL', 'es');
    response.redirect("/");
 });
-*/
+
 
 // Render example.com/orders
 //app.get('/orders', function(request, response) {
