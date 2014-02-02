@@ -19,8 +19,8 @@ app.listen(port, function() {
 });
 */
 
-var gettext = require('gettext'),
-    _ = gettext.gettext;
+//var gettext = require('gettext'),
+//    _ = gettext.gettext;
 
 //gettext.loadLanguageFile('./locale/es/messages.po', 'es');
 //gettext.loadLanguageFile('./locale/ru/messages.po', 'ru');
@@ -35,11 +35,11 @@ app.get('/', function(request, response) {
 
 
 // language/es
-/*app.get('/es', function(request, response) {
+app.get('/language/es', function(request, response) {
    gettext.setlocale('LC_ALL', 'es');
    response.redirect("/");
 });
-*/
+
 
 // Render example.com/orders
 //app.get('/orders', function(request, response) {
