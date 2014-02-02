@@ -35,7 +35,7 @@ app.get('/', function(request, response) {
 
 
 // language/es
-app.get('/es', function(request, response) {
+app.get('/language/es', function(request, response) {
    gettext.setlocale('LC_ALL', 'es');
    response.redirect("/");
 });
