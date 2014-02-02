@@ -1,0 +1,27 @@
+# Spanish translation 
+
+msgid ""
+msgstr ""
+
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+
+msgid "Donate"
+msgstr "Пожертвовать"
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "About"
+msgstr "О нас"
+
+msgid "Contacts"
+msgstr "Контакты"
+
+
+msgid "Hello, World!"
+msgstr "Zdravstvui Mir!"
+
