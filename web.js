@@ -35,11 +35,11 @@ app.get('/', function(request, response) {
 
 
 // language/es
-app.get('/es', function(request, response) {
+/*app.get('/es', function(request, response) {
    gettext.setlocale('LC_ALL', 'es');
    response.redirect("/");
 });
-
+*/
 
 // Render example.com/orders
 //app.get('/orders', function(request, response) {
