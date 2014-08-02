@@ -14,6 +14,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 8080);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.logger("dev"));
 
 app.use(i18n.abide({
   supported_languages: ['en', 'es', 'ru'],
