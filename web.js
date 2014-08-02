@@ -16,8 +16,8 @@ app.set('port', process.env.PORT || 8080);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(i18n.abide({
-  supported_languages: ['en-US', 'es', 'ru', 'db-LB'],
-  default_lang: 'en',
+  supported_languages: ['en', 'es', 'ru', 'db-LB'],
+  default_lang: 'es',
 //  debug_lang: 'it-CH',
   translation_directory: 'locale'
 }));
