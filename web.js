@@ -26,7 +26,7 @@ app.use(i18n.abide({
 app.get('/', function(request, response) {
    response.render("homepage", {
 	title: request.gettext("From the body toward the light. Translation into Russian"),
-        lang: 'en'
+        lang: 'es'
     });
 });
 
@@ -53,17 +53,17 @@ app.get('/', function(request, response) {
 
 
 // language/es
-app.get('/language/es', function(request, response) {
+//app.get('/language/es', function(request, response) {
    //gettext.setlocale('LC_ALL', 'es');
    //lang = 'es';
    //response.redirect("/");
-   response.render("homepage", {
-        title: request.gettext("From the body toward the light. Translation into Russian"),
-        lang: 'es'
-    });
-   response.redirect("/");
+//   response.render("homepage", {
+ //       title: request.gettext("From the body toward the light. Translation into Russian"),
+  //      lang: 'es'
+   // });
+   //response.redirect("/");
 
-});
+//});
 
 
 // Render example.com/orders
