@@ -6,7 +6,7 @@ var express = require('express')
 //var app = express.createServer(express.logger());
 
 
-  var app = express();
+var app = express();
 
 
 app.get('/', function(request, response) {
@@ -28,7 +28,7 @@ app.listen(port, function() {
 //var gettext = require('gettext'),
 //  _ = gettext.gettext;
 
-//gettext.loadLanguageFile('./locale/es/messages.po', 'es');
+gettext.loadLanguageFile('./locale/es/messages.po', 'es');
 //gettext.loadLanguageFile('./locale/ru/messages.po', 'ru');
 
 //gettext.loadLocaleDirectory('./locale/');
