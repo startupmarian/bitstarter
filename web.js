@@ -1,5 +1,6 @@
 var async = require('async')
   , express = require('express')
+  , path    = require('path')
   , fs      = require('fs')
   , http    = require('http')
   , https   = require('https')
