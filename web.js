@@ -19,8 +19,8 @@ app.listen(port, function() {
 });
 */
 
-var gettext = require('gettext');
-//    _ = gettext.gettext;
+var gettext = require('gettext'),
+    _ = gettext.gettext;
 
 //gettext.loadLanguageFile('./locale/es/messages.po', 'es');
 //gettext.loadLanguageFile('./locale/ru/messages.po', 'ru');
