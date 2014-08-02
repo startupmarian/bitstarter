@@ -11,16 +11,26 @@ var async = require('async')
 //var app = express.createServer(express.logger());
 
 var app = express();
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.set('port', process.env.PORT || 8080);
 
 app.use(i18n.abide({
-  supported_languages: ['en-US', 'es', 'ru', 'db-LB', 'it-CH'],
+  supported_languages: ['en-US', 'es', 'ru', 'db-LB'],
   default_lang: 'en-US',
 //  debug_lang: 'it-CH',
   translation_directory: 'locale'
 }));
 
+// Render homepage
+app.get('/', function(request, response) {
+   response.render("homepage", {
+	title: request.gettext("From the body toward the light. Translation into Russian"),
+        lang: "en"
+    });
+});
 
-
+/*
 app.get('/', function(request, response) {
   var fs = require('fs');
 
@@ -28,7 +38,7 @@ app.get('/', function(request, response) {
 
   response.send(buf.toString('utf8'));
 });
-
+*/
 
 //gettext.loadLanguageFile('./locale/es/messages.po', 'es');
 //gettext.loadLanguageFile('./locale/ru/messages.po', 'ru');
@@ -36,10 +46,10 @@ app.get('/', function(request, response) {
 
 
 // Render homepage (note trailing slash): example.com/
-app.get('/', function(request, response) {
-  var data = fs.readFileSync('index.html').toString();
-  response.send(data);
-});
+//app.get('/', function(request, response) {
+//  var data = fs.readFileSync('index.html').toString();
+//  response.send(data);
+//});
 
 
 // language/es
