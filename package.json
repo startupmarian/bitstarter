@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    //"gettext": "*",
     "i18n-abide": "~0.0.22",
     "sequelize": "~2.0.0-alpha2",
     "pg": "~2.3.1",
