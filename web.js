@@ -66,7 +66,7 @@ app.get('/language/es', function(request, response) {
     });
    //response.redirect("/");
 
-//});
+});
 
 
 // Render example.com/orders
