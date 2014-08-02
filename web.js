@@ -3,17 +3,25 @@ var async = require('async')
   , fs      = require('fs')
   , http    = require('http')
   , https   = require('https')
+  , i18n    = require('i18n-abide')
   , gettext = require('gettext')
   , _       = gettext.gettext;
 
 //var app = express.createServer(express.logger());
 
-
 var app = express();
+
+app.use(i18n.abide({
+  supported_languages: ['en-US', 'es', 'ru', 'db-LB', 'it-CH'],
+  default_lang: 'en-US',
+  debug_lang: 'it-CH',
+  translation_directory: 'locale'
+}));
+
 
 
 app.get('/', function(request, response) {
-gettext.loadLanguageFile('./locale/es/messages.po', 'es');
+//gettext.loadLanguageFile('./locale/es/messages.po', 'es');
   var fs = require('fs');
 
   var buf = new Buffer(fs.readFileSync('index.html'), 'utf8');
