@@ -26,7 +26,7 @@ app.use(i18n.abide({
 app.get('/', function(request, response) {
    response.render("homepage", {
 	title: request.gettext("From the body toward the light. Translation into Russian"),
-        lang: Ã'Ãen'
+        lang: 'en'
     });
 });
 
