@@ -21,7 +21,7 @@ app.use(express.logger("dev"));
 app.use(i18n.abide({
   supported_languages: ['en', 'es', 'ru'],
   default_lang: 'en',
-  translation_directory: './public/locale/'
+  translation_directory: 'locale'
 }));
 
 // Render homepage
