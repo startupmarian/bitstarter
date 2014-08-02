@@ -4,8 +4,9 @@ var async = require('async')
   , http    = require('http')
   , https   = require('https')
   , i18n    = require('i18n-abide')
-  , gettext = require('gettext')
-  , _       = gettext.gettext;
+;
+ // , gettext = require('gettext')
+ // , _       = gettext.gettext;
 
 //var app = express.createServer(express.logger());
 
@@ -14,14 +15,13 @@ var app = express();
 app.use(i18n.abide({
   supported_languages: ['en-US', 'es', 'ru', 'db-LB', 'it-CH'],
   default_lang: 'en-US',
-  debug_lang: 'it-CH',
+//  debug_lang: 'it-CH',
   translation_directory: 'locale'
 }));
 
 
 
 app.get('/', function(request, response) {
-//gettext.loadLanguageFile('./locale/es/messages.po', 'es');
   var fs = require('fs');
 
   var buf = new Buffer(fs.readFileSync('index.html'), 'utf8');
@@ -30,17 +30,10 @@ app.get('/', function(request, response) {
 });
 
 
-/*
-var port = process.env.PORT || 8080;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
-*/
-
 //gettext.loadLanguageFile('./locale/es/messages.po', 'es');
 //gettext.loadLanguageFile('./locale/ru/messages.po', 'ru');
-
 //gettext.loadLocaleDirectory('./locale/');
+
 
 // Render homepage (note trailing slash): example.com/
 app.get('/', function(request, response) {
