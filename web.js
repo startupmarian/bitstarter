@@ -1,5 +1,8 @@
-var express = require('express')
+var async = require('async')
+  , express = require('express')
   , fs      = require('fs')
+  , http    = require('http')
+  , https   = require('https')
   , gettext = require('gettext')
   , _       = gettext.gettext;
 
@@ -10,6 +13,7 @@ var app = express();
 
 
 app.get('/', function(request, response) {
+gettext.loadLanguageFile('./locale/es/messages.po', 'es');
   var fs = require('fs');
 
   var buf = new Buffer(fs.readFileSync('index.html'), 'utf8');
@@ -28,7 +32,7 @@ app.listen(port, function() {
 //var gettext = require('gettext'),
 //  _ = gettext.gettext;
 
-gettext.loadLanguageFile('./locale/es/messages.po', 'es');
+//gettext.loadLanguageFile('./locale/es/messages.po', 'es');
 //gettext.loadLanguageFile('./locale/ru/messages.po', 'ru');
 
 //gettext.loadLocaleDirectory('./locale/');
