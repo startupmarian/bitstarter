@@ -6,8 +6,6 @@ var async = require('async')
   , https   = require('https')
   , i18n    = require('i18n-abide')
 ;
- // , gettext = require('gettext')
- // , _       = gettext.gettext;
 
 //var app = express.createServer(express.logger());
 
@@ -19,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(i18n.abide({
   supported_languages: ['en-US', 'es', 'ru', 'db-LB'],
-  default_lang: 'en-US',
+  default_lang: 'en',
 //  debug_lang: 'it-CH',
   translation_directory: 'locale'
 }));
@@ -28,7 +26,7 @@ app.use(i18n.abide({
 app.get('/', function(request, response) {
    response.render("homepage", {
 	title: request.gettext("From the body toward the light. Translation into Russian"),
-        lang: "en"
+        lang: Ã'Ãen'
     });
 });
 
@@ -57,8 +55,12 @@ app.get('/', function(request, response) {
 // language/es
 app.get('/language/es', function(request, response) {
    //gettext.setlocale('LC_ALL', 'es');
-   lang = 'es';
-   response.redirect("/");
+   //lang = 'es';
+   //response.redirect("/");
+   response.render("homepage", {
+        title: request.gettext("From the body toward the light. Translation into Russian"),
+        lang: 'es'
+    });
 });
 
 
