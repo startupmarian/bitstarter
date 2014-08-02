@@ -61,6 +61,8 @@ app.get('/language/es', function(request, response) {
         title: request.gettext("From the body toward the light. Translation into Russian"),
         lang: 'es'
     });
+   response.redirect("/");
+
 });
 
 
