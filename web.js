@@ -30,9 +30,18 @@ app.use(app.router);
 
 // Render homepage
 app.get('/', function(request, response) {
+   var sel_en="", sel_es="", sel_ru="";
+   switch (request.body.lang) {
+     case "en": sel_en = " selected "; break;
+     case "es": sel_es = " selected "; break;
+     case "ru": sel_ru = " selected "; break;
+   }
    response.render("homepage", {
-	title: "From the body toward the light. Translation into Russian"
-        //, language: lang
+	title: "From the body toward the light. Translation into Russian",
+        sel_en: sel_en,
+        sel_es: sel_es,
+        sel_ru: sel_ru
+        , language: request.body.lang
     });
 });
 
