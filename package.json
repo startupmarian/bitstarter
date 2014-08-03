@@ -15,7 +15,8 @@
     "async": "~0.2.9",
     "request": "~2.27.0",
     "nunjucks": "0.1.8a",
-    "underscore": "~1.5.1"
+    "underscore": "~1.5.1",
+    "lingua": "0.4.0"
   },
   "engines": {
     "node": "0.10.12",
