@@ -29,9 +29,8 @@ app.use(app.router);
 
 // Render homepage
 app.get('/', function(request, response) {
-//alert((request.body.sel_lang));
 
-   var sell_en="", sell_es="", sell_ru="", langg="en";
+   var sell_en="", sell_es="", sell_ru="";//, langg="en";
    if (typeof(request.body.sel_lang) != 'undefined') {
      langg = request.body.sel_lang;
      switch (langg) {
@@ -42,13 +41,20 @@ app.get('/', function(request, response) {
    }
    else
        sell_en = " selected ";
-sell_es = " selected "; 
+   sell_es = " selected "; */
+
+    switch (request.query['lang']) {
+       case "en": sell_en = " selected "; break;
+       case "es": sell_es = " selected "; break;
+       case "ru": sell_ru = " selected "; break;
+     }
+
    response.render("homepage", {
 	title: "From the body toward the light. Translation into Russian",
         sel_en: sell_en,
         sel_es: sell_es,
         sel_ru: sell_ru
-        , language: langg
+        , language: request.query['lang'] //langg
     });
 });
 
