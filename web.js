@@ -1,35 +1,23 @@
 var async = require('async')
   , express = require('express')
   , lingua  = require('lingua')
-//  , nunjucks = require( "nunjucks" )
   , path    = require('path')
   , fs      = require('fs')
   , http    = require('http')
   , https   = require('https')
   , i18n    = require('i18n-abide')
-  //, nunjucksEnv = new nunjucks.Environment( new nunjucks.FileSystemLoader( path.join( __dirname, '/views' )));
 ;
 var app = express();
-
-// Enable template rendering with nunjucks
-//nunjucksEnv.express( app );
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-/*app.use(i18n.abide({
-  supported_languages: ['en_US', 'es', 'ru'],
-  default_lang: 'en_US',
-  translation_directory: 'public/locale',
-  locale_on_url: true
-}));*/
-
 // Lingua configuration
-    app.use(lingua(app, {
-        defaultLocale: 'en',
-        path: __dirname + '/public/locale',
-        storageKey: 'lang' 
-    }));
+app.use(lingua(app, {
+  defaultLocale: 'en',
+  path: __dirname + '/public/locale',
+  storageKey: 'lang' 
+}));
 
 app.use(express.bodyParser());
 app.use(express.methodOverride());
@@ -42,7 +30,6 @@ app.use(app.router);
 
 // Render homepage
 app.get('/', function(request, response) {
-//   request.setLocale('en');
    response.render("homepage", {
 	title: "From the body toward the light. Translation into Russian",
         lang: 'en'
@@ -59,11 +46,6 @@ app.get('/', function(request, response) {
 });
 */
 
-//gettext.loadLanguageFile('./locale/es/messages.po', 'es');
-//gettext.loadLanguageFile('./locale/ru/messages.po', 'ru');
-//gettext.loadLocaleDirectory('./locale/');
-
-
 // Render homepage (note trailing slash): example.com/
 //app.get('/', function(request, response) {
 //  var data = fs.readFileSync('index.html').toString();
@@ -73,10 +55,7 @@ app.get('/', function(request, response) {
 
 // language/es
 /*app.get('/?lang=es', function(request, response) {
-   //request.setLocale('es_ES');
-   //response.redirect("/");
-
-  // response.render("homepage", {
+// response.render("homepage", {
     //    title: "From the body toward the light. Translation into Russian",
       //  lang: 'es'
     //});
