@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="<%= language %>" ng-app>
   <head>
     <meta charset="utf-8">
     <title><%= title %></title>
@@ -41,9 +41,9 @@
           </div><!--/.nav-collapse -->
         <div id="lang">
           <select onchange="window.location.href = '?lang='+this.value">
-            <option selected="" value="en">English</option>
-            <option value="es">Español</option>
-            <option value="ru">Russian</option>
+            <option <%= sel_en %> value="en">English</option>
+            <option <%= sel_es %> value="es">Español</option>
+            <option <%= sel_ru %> value="ru">Russian</option>
           </select>
         </div>
         </div>
