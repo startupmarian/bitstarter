@@ -31,8 +31,8 @@ app.use(app.router);
 // Render homepage
 app.get('/', function(request, response) {
    response.render("homepage", {
-	title: "From the body toward the light. Translation into Russian",
-        language: lang
+	title: "From the body toward the light. Translation into Russian"
+        //, language: lang
     });
 });
 
