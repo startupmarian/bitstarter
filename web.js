@@ -1,33 +1,41 @@
 var async = require('async')
   , express = require('express')
-  , nunjucks = require( "nunjucks" )
+  , lingua  = require('lingua')
+//  , nunjucks = require( "nunjucks" )
   , path    = require('path')
   , fs      = require('fs')
   , http    = require('http')
   , https   = require('https')
   , i18n    = require('i18n-abide')
-  , nunjucksEnv = new nunjucks.Environment( new nunjucks.FileSystemLoader( path.join( __dirname, '/views' )));
+  //, nunjucksEnv = new nunjucks.Environment( new nunjucks.FileSystemLoader( path.join( __dirname, '/views' )));
 ;
 var app = express();
 
 // Enable template rendering with nunjucks
-nunjucksEnv.express( app );
+//nunjucksEnv.express( app );
 
-//app.use( express.logger());
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
-app.use(i18n.abide({
+/*app.use(i18n.abide({
   supported_languages: ['en_US', 'es', 'ru'],
   default_lang: 'en_US',
   translation_directory: 'public/locale',
   locale_on_url: true
-}));
+}));*/
 
-//var app = express();
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+// Lingua configuration
+    app.use(lingua(app, {
+        defaultLocale: 'en',
+        path: __dirname + '/public/locale',
+        storageKey: 'lang' 
+    }));
+
+app.use(express.bodyParser());
+app.use(express.methodOverride());
+
 app.set('port', process.env.PORT || 8080);
 app.use(express.static(path.join(__dirname, 'public')));
-//app.use(express.static(path.join(__dirname, 'locale')));
 
 app.use(express.logger("dev"));
 

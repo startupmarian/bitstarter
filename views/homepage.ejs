@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ lang }}" dir="{{ lang_dir }}" ng-app>
+<html lang="<%= lang %>" dir="<%= lang_dir %>" ng-app>
   <head>
     <meta charset="utf-8">
     <title><%= title %></title>
@@ -34,13 +34,13 @@
           <a class="brand" href="#">Bitstarter</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">{{ gettext("Home") }}</a></li>
-              <li><a href="#about">{{ gettext('About') }}</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li class="active"><a href="#"><%= lingua.Home %></a></li>
+              <li><a href="#about"><%= lingua.About %></a></li>
+              <li><a href="#contact"><%= lingua.Contact %></a></li>
             </ul>
           </div><!--/.nav-collapse -->
     <div id="lang">
-          <select onchange="window.location.href = '/'+this.value">
+          <select onchange="window.location.href = '?lang='+this.value">
             <option selected="" value="en">English</option>
             <option value="es">Español</option>
             <option value="ru">Russian</option>
