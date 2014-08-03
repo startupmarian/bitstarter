@@ -40,7 +40,7 @@ app.get('/', function(request, response) {
    }
    else
        sell_en = " selected ";
- 
+sell_es = " selected "; 
    response.render("homepage", {
 	title: "From the body toward the light. Translation into Russian",
         sel_en: sell_en,
