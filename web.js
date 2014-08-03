@@ -26,7 +26,7 @@ app.use(i18n.abide({
 
 // Render homepage
 app.get('/', function(request, response) {
-   request.setLocale('en');
+//   request.setLocale('en');
    response.render("homepage", {
 	title: request.gettext("From the body toward the light. Translation into Russian"),
         lang: 'en'
