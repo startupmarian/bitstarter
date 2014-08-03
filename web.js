@@ -58,6 +58,7 @@ app.get('/', function(request, response) {
 // language/es
 app.get('/language/es', function(request, response) {
    request.setLocale('es_ES');
+   response.redirect("/");
 
    response.render("homepage", {
         title: request.gettext("From the body toward the light. Translation into Russian"),
