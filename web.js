@@ -29,7 +29,7 @@ app.use(app.router);
 
 // Render homepage
 app.get('/', function(request, response) {
-alert((request.body.sel_lang));
+//alert((request.body.sel_lang));
 
    var sell_en="", sell_es="", sell_ru="", langg="en";
    if (typeof(request.body.sel_lang) != 'undefined') {
