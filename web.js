@@ -31,7 +31,7 @@ app.use(app.router);
 app.get('/', function(request, response) {
 
    var sell_en="", sell_es="", sell_ru="";//, langg="en";
-   if (typeof(request.body.sel_lang) != 'undefined') {
+/*   if (typeof(request.body.sel_lang) != 'undefined') {
      langg = request.body.sel_lang;
      switch (langg) {
        case "en": sell_en = " selected "; break;
