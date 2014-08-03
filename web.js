@@ -38,12 +38,13 @@ app.set('port', process.env.PORT || 8080);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.logger("dev"));
+app.use(app.router);
 
 // Render homepage
 app.get('/', function(request, response) {
 //   request.setLocale('en');
    response.render("homepage", {
-	title: request.gettext("From the body toward the light. Translation into Russian"),
+	title: "From the body toward the light. Translation into Russian",
         lang: 'en'
     });
 });
@@ -71,16 +72,16 @@ app.get('/', function(request, response) {
 
 
 // language/es
-app.get('/es', function(request, response) {
+/*app.get('/?lang=es', function(request, response) {
    //request.setLocale('es_ES');
    //response.redirect("/");
 
-   response.render("homepage", {
-        title: request.gettext("From the body toward the light. Translation into Russian"),
-        lang: 'es'
-    });
+  // response.render("homepage", {
+    //    title: "From the body toward the light. Translation into Russian",
+      //  lang: 'es'
+    //});
    //response.redirect("/");
-});
+//});*/
 
 
 // Render example.com/orders
