@@ -37,6 +37,7 @@ app.get('/', function(request, response) {
        case "es": sell_es = " selected "; break;
        case "ru": sell_ru = " selected "; break;
      }
+   }
    else
        sell_en = " selected ";
  
