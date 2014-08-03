@@ -5,7 +5,6 @@ var async = require('async')
   , fs      = require('fs')
   , http    = require('http')
   , https   = require('https')
-  , i18n    = require('i18n-abide')
 ;
 var app = express();
 
@@ -30,18 +29,23 @@ app.use(app.router);
 
 // Render homepage
 app.get('/', function(request, response) {
-   var sel_en="", sel_es="", sel_ru="";
-   switch (request.body.lang) {
-     case "en": sel_en = " selected "; break;
-     case "es": sel_es = " selected "; break;
-     case "ru": sel_ru = " selected "; break;
-   }
+   var sell_en="", sell_es="", sell_ru="", langg="en";
+   if (typeof(request.body.lang) != 'undefined') {
+     langg = request.body.lang;
+     switch (langg) {
+       case "en": sell_en = " selected "; break;
+       case "es": sell_es = " selected "; break;
+       case "ru": sell_ru = " selected "; break;
+     }
+   else
+       sell_en = " selected ";
+ 
    response.render("homepage", {
 	title: "From the body toward the light. Translation into Russian",
-        sel_en: sel_en,
-        sel_es: sel_es,
-        sel_ru: sel_ru
-        , language: request.body.lang
+        sel_en: sell_en,
+        sel_es: sell_es,
+        sel_ru: sell_ru
+        , language: langg
     });
 });
 
