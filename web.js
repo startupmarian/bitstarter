@@ -7,7 +7,11 @@ var async = require('async')
   , i18n    = require('i18n-abide')
 ;
 
-//var app = express.createServer(express.logger());
+app.use(i18n.abide({
+  supported_languages: ['en', 'es', 'ru'],
+  default_lang: 'en',
+  translation_directory: 'public/locale'
+}));
 
 var app = express();
 app.set('views', __dirname + '/views');
@@ -17,12 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(express.static(path.join(__dirname, 'locale')));
 
 app.use(express.logger("dev"));
-
-app.use(i18n.abide({
-  supported_languages: ['en', 'es', 'ru'],
-  default_lang: 'en',
-  translation_directory: 'public/locale'
-}));
 
 // Render homepage
 app.get('/', function(request, response) {
