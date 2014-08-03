@@ -1,11 +1,16 @@
 var async = require('async')
   , express = require('express')
+  , nunjucks = require( "nunjucks" )
   , path    = require('path')
   , fs      = require('fs')
   , http    = require('http')
   , https   = require('https')
   , i18n    = require('i18n-abide')
+  , nunjucksEnv = new nunjucks.Environment( new nunjucks.FileSystemLoader( path.join( __dirname, '/views' )));
 ;
+
+// Enable template rendering with nunjucks
+nunjucksEnv.express( app );
 
 var app = express();
 
