@@ -10,9 +10,10 @@ var async = require('async')
 var app = express();
 
 app.use(i18n.abide({
-  supported_languages: ['en', 'es', 'ru'],
-  default_lang: 'en',
-  translation_directory: 'public/locale'
+  supported_languages: ['en_US', 'es', 'ru'],
+  default_lang: 'en_US',
+  translation_directory: 'public/locale',
+  locale_on_url: true
 }));
 
 //var app = express();
@@ -56,9 +57,9 @@ app.get('/', function(request, response) {
 
 
 // language/es
-app.get('/language/es', function(request, response) {
-   request.setLocale('es_ES');
-   response.redirect("/");
+app.get('/es', function(request, response) {
+   //request.setLocale('es_ES');
+   //response.redirect("/");
 
    response.render("homepage", {
         title: request.gettext("From the body toward the light. Translation into Russian"),
