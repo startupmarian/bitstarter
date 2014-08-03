@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.use(lingua(app, {
   defaultLocale: 'en',
   path: __dirname + '/public/locale',
-  storageKey: 'lang' 
+  storageKey: 'lang', 
   cookieOptions: {
   //  domain: '.domain.tld',    // to allow subdomains access to the same cookie, for instance
   //  path: '/blog',            // to restrict the language cookie to a path
