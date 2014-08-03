@@ -20,8 +20,8 @@ app.use(lingua(app, {
   //  domain: '.domain.tld',    // to allow subdomains access to the same cookie, for instance
   //  path: '/blog',            // to restrict the language cookie to a path
     httpOnly: false,          // if you need access to this cookie from javascript on the client
-    expires: new Date(Date.now() + 24 * 60 * 60 * 1000),  // expire in 1 day instead of 1 year
-    secure: true              // for serving over https
+    expires: new Date(Date.now() + 24 * 60 * 60 * 1000)  // expire in 1 day instead of 1 year
+//    secure: true              // for serving over https
   }
 }));
 
