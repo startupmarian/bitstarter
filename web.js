@@ -7,13 +7,15 @@ var async = require('async')
   , i18n    = require('i18n-abide')
 ;
 
+var app = express();
+
 app.use(i18n.abide({
   supported_languages: ['en', 'es', 'ru'],
   default_lang: 'en',
   translation_directory: 'public/locale'
 }));
 
-var app = express();
+//var app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 8080);
