@@ -40,9 +40,10 @@ app.get('/', function(request, response) {
        case "ru": sell_ru = " selected "; break;
      }
    }
-   else
+   else{
        sell_en = " selected ";
-
+       request.query['lang'] = 'en';
+   }
    response.render("homepage", {
 	title: "From the body toward the light. Translation into Russian",
         sel_en: sell_en,
