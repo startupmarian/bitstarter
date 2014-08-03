@@ -39,8 +39,9 @@ app.get('/', function(request, response) {
 
    var sell_en="", sell_es="", sell_ru="", langg="en";
 
+   langg = request.query['lang'];
    if (typeof(request.query['lang']) != 'undefined') {
-     langg = request.query['lang'];
+   //  langg = request.query['lang'];
      switch (langg) {
        case "en": sell_en = " selected "; break;
        case "es": sell_es = " selected "; break;
