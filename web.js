@@ -42,7 +42,7 @@ app.get('/', function(request, response) {
    }
    else{
        sell_en = " selected ";
-       request.query['lang'] = 'en';
+//       request.query['lang'] = 'en';
    }
    response.render("homepage", {
 	title: "From the body toward the light. Translation into Russian",
