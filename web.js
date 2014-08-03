@@ -48,7 +48,7 @@ app.get('/', function(request, response) {
      }
    }
    else{
-       sell_en = " selected ";
+//       sell_en = " selected ";
 //       request.query['lang'] = 'en';
    }
    response.render("homepage", {
