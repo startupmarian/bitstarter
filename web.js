@@ -29,11 +29,11 @@ app.use(app.router);
 
 // Render homepage
 app.get('/', function(request, response) {
-alert((request.body.sellang));
+alert((request.body.sel_lang));
 
    var sell_en="", sell_es="", sell_ru="", langg="en";
-   if (typeof(request.body.sellang) != 'undefined') {
-     langg = request.body.sellang;
+   if (typeof(request.body.sel_lang) != 'undefined') {
+     langg = request.body.sel_lang;
      switch (langg) {
        case "en": sell_en = " selected "; break;
        case "es": sell_es = " selected "; break;
