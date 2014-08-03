@@ -8,11 +8,12 @@ var async = require('async')
   , i18n    = require('i18n-abide')
   , nunjucksEnv = new nunjucks.Environment( new nunjucks.FileSystemLoader( path.join( __dirname, '/views' )));
 ;
+var app = express();
 
 // Enable template rendering with nunjucks
 nunjucksEnv.express( app );
 
-var app = express();
+//app.use( express.logger());
 
 app.use(i18n.abide({
   supported_languages: ['en_US', 'es', 'ru'],
