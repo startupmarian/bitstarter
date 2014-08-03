@@ -32,7 +32,7 @@ app.use(app.router);
 app.get('/', function(request, response) {
    response.render("homepage", {
 	title: "From the body toward the light. Translation into Russian",
-        lang: 'en'
+        language: lang
     });
 });
 
